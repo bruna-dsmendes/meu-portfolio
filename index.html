@@ -3,11 +3,16 @@
 
 <head>
 
+	<!-- Fontes do Google -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Fonte do Google - Poppins -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 	<meta charset="UTF-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<meta name="author" content="Generation Brasil">
+	<meta name="author" content="Bruna Mendes">
 	<meta name="description" content="Portfólio da Generation Brasil, 
                 desenvolvedor Full Stack especializado em criar experiências 
                 digitais incríveis. Conheça meus projetos e entre em contato.">
@@ -15,63 +20,74 @@
 
 	<link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
 
-	<title>Portfólio Generation Brasil</title>
+	<!-- SWIPER CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+	<!-- Link para a Folha de Estilo da Página - CSS -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+
+	<title>Portfólio Bruna Mendes</title>
 </head>
 
+
 <body>
-	<!-- Cabeçalho -->
+	<!-- Cabeçalho da Página (header) -->
 	<header>
+
 		<div class="menu-content">
 
-			<!-- Título -->
+			<!-- TÍTULO -->
 			<a href="index.html" id="titulo">Portfólio</a>
 
-			<!--Menu  -->
+			<!-- MENU -->
 			<nav>
 				<ul class="menu-list">
-					<li><a href="#hero">Inicio</a></li>
+					<li><a href="#hero">Início</a></li>
 					<li><a href="#about">Sobre</a></li>
 					<li><a href="#projects">Projetos</a></li>
 					<li><a href="#contact">Contato</a></li>
 				</ul>
 			</nav>
+
 		</div>
+
 	</header>
 
-	<!-- Seção principal -->
+	<!-- Seção Principal da Página (main) -->
 	<main>
 
-		<!-- Seção de boas vindas -->
-		<section id="hero" classe="section-container hero container">
+		<!-- Seção de Boas vindas -->
+		<section id="hero" class="section-container hero-container">
 
-			<!-- Boas Vindas -->
+			<!-- BOAS VINDAS -->
 			<article class="hero-content">
 
-				<span> Olá, eu sou a Bruna Mendes</span>
-				<h1>Desenvolvedora Full Stack</h1>
+				<span>👋 Olá, eu sou a Generation Brasil</span>
+				<h1>Desenvolvedor Full Stack</h1>
 				<p>Transformo ideias em código e crio experiências digitais incríveis.</p>
 
 				<div class="buttons-container">
-					<a href="#contact" class="botao">Entre em contato</a>
+					<a href="#contact" class="botao">Entre em Contato</a>
 					<a href="#about" class="botao-outline">Saiba Mais...</a>
 				</div>
+
 			</article>
 
-			<!-- Imagem -->
+			<!-- IMAGEM -->
 			<figure class="hero-image">
 				<img src="./assets/img/eu-color.svg" alt="Foto do autor." class="float-animation">
 			</figure>
 
 		</section>
 
-		<!-- Seção Sobre a autora -->
-		<section id="äbout" class="section-container about-container">
+		<!-- Seção Sobre o autor -->
+		<section id="about" class="section-container about-container">
 
-			<figure class="äbout-image">
+			<figure class="about-image">
 				<img src="./assets/img/eu-color.svg" alt="Foto do perfil">
 			</figure>
 
-			<article class="äbout-content">
+			<article class="about-content">
 				<h2>Sobre mim</h2>
 				<p>Olá! Sou Bruna, Desenvolvedora Java FullStack.</p>
 				<p>Sempre acreditei que as melhores soluções de software nascem da junção entre uma arquitetura sólida
@@ -87,7 +103,6 @@
 						<a href="https://github.com/bruna-dsmendes" target="_blank" class="botao">GitHub</a>
 						<a href="https://drive.google.com/file/d/1FtRm2YPmsp3WoCO77BZvBvbbIpCPZje8/view?usp=sharing" target="_blank"
 							class="botao-outline">Currículo</a>
-
 					</div>
 
 					<div class="data-container">
@@ -96,7 +111,7 @@
 							<span class="data-label">Seguidores</span>
 						</div>
 						<div class="data-item">
-							<span class="data-number">18</span>
+							<span class="data-number">19</span>
 							<span class="data-label">Repositórios</span>
 						</div>
 					</div>
@@ -105,51 +120,67 @@
 
 		</section>
 
-		<!-- Seção Projetos -->
+		<!-- Seção Projetos do autor -->
 		<section id="projects" class="section-container projects-container">
 			<h2>Meus Projetos</h2>
 
-			<!-- Swiper container -->
+			<!-- Swiper Container -->
 			<div class="swiper projects-swiper">
-				<div class="swiper-slide">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
 
-					<article class="project-card">
-						<figure class="project-image">
-							<img src="./assets/icons/languages/github.svg" alt="Ïcone Github">
-						</figure>
-
-						<div class="project-content">
-							<h3>Projeto GitHub</h3>
-							<p>Projeto Desenvolvido no GitHub</p>
-
-							<div class="project-tags">
-								<span class="tag">GitHub</span>
+						<article class="project-card">
+							<div class="project-image">
+								<img src="./assets/icons/languages/github.svg" alt="Ícone GitHub" />
 							</div>
 
-							<div class="project-buttons">
-								<a href="#" target="_blank" class="botao botao-sm">
-									GitHub</a>
-								<a href="#" target="_blank" class="botao-outline botao-sm">
-									Deploy</a>
-							</div>
-						</div>
-					</article>
+							<div class="project-content">
+								<h3>Projeto Blog Pessoal</h3>
+								<p>Projeto Desenvolvido no GitHub</p>
+								<div class="project-tags">
+									<span class="tag">GitHub</span>
+								</div>
+								<div class="project-buttons">
+									<a href="https://github.com/bruna-dsmendes/blog-pessoal" target="_blank" class="botao botao-sm">
+										GitHub
+									</a>
+									<a href="hhttps://blogpessoal-qkji.onrender.com/swagger-ui/swagger-ui/index.html" target=" _blank"
+										class="botao-outline botao-sm">
+										Deploy
+									</a>
+								</div>
+
+								<div class="project-content">
+									<h3>Projeto API Farmácia</h3>
+									<p>Projeto Desenvolvido no GitHub</p>
+									<div class="project-tags">
+										<span class="tag">GitHub</span>
+									</div>
+									<div class="project-buttons">
+										<a href="https://github.com/bruna-dsmendes/projeto_final_bloco_02" target="_blank"
+											class="botao botao-sm">
+											GitHub
+										</a>
+									</div>
+								</div>
+
+						</article>
+					</div>
 				</div>
+
+				<!-- Botões de navegação -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+
+				<!-- Paginação -->
+				<div class="swiper-pagination"></div>
 			</div>
-
-			<!-- Botões de Navegação -->
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
-
-			<!-- Paginação -->
-			<div class="swiper-pagination"></div>
 		</section>
 
-		<!-- Seção Form de Contato e Redes Sociais -->
+		<!-- Formulário de Contato e Redes Sociais -->
 		<section id="contact" class="section-container contact-container">
 
-			<!-- Redes Sociais -->
-
+			<!-- REDES SOCIAIS -->
 			<article class="contact-info">
 				<h2>Entre em Contato</h2>
 				<p>Sinta-se à vontade para entrar em contato comigo!</p>
@@ -157,18 +188,19 @@
 				<div class="social-container">
 					<a href="https://www.linkedin.com/in/devbrunamendes/" target="_blank" class="social-icon"
 						aria-label="LinkedIn">
-						<img src="./assets/icons/social/linkedin.svg" alt="Link para o LinkedIn"></a>
+						<img src="./assets/icons/social/linkedin.svg" alt="Link para o Linkedin">
+					</a>
 					<a href="https://github.com/bruna-dsmendes" target="_blank" class="social-icon" aria-label="GitHub">
-						<img src="./assets/icons/social/github.svg" alt="Link para o GitHub"></a>
+						<img src="./assets/icons/social/github.svg" alt="Link para o GitHub">
+					</a>
 					<a href="https://www.instagram.com/bruumends/" target="_blank" class="social-icon" aria-label="Instagram">
-						<img src="./assets/icons/social/instagram.svg" alt="Link para o instagram">
+						<img src="./assets/icons/social/instagram.svg" alt="Link para o Instagram">
 					</a>
 				</div>
 			</article>
 
-
-			<!-- Formulario -->
-			<form id="Formulário">
+			<!-- FORMULÁRIO -->
+			<form id="formulario">
 
 				<label for="nome">Nome</label>
 				<input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">
@@ -183,15 +215,17 @@
 				<span id="erro-assunto"></span>
 
 				<label for="mensagem">Mensagem</label>
-				<input id="mensagem" name="mensagem" type="text" placeholder="Escerva a sua mensagem aqui..."></textarea>
+				<textarea id="mensagem" name="mensagem" placeholder="Escreva a sua mensagem aqui..."></textarea>
 				<span id="erro-mensagem"></span>
 
 				<button class="botao" type="submit">Enviar Mensagem</button>
 			</form>
+
 		</section>
 
 	</main>
-	<!-- Rodapé  -->
+
+	<!-- Rodapé da Página (footer) -->
 	<footer>
 		Desenvolvido por Bruna Mendes - 2026
 	</footer>
