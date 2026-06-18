@@ -1,14 +1,26 @@
+// ============================================
+// SELEÇÃO DE ELEMENTOS DA PÁGINA
+// ============================================
+
+// Seletor da Seção About (section)
 const about = document.querySelector('#about');
 
+// Seletor da Seção Projects (Carrossel)
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 
+// Seletor do Formulário
 const formulario = document.querySelector('#formulario');
 
+// Regex de validação do e-mail
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+// ============================================
+// BUSCAR DADOS DO PERFIL DO GITHUB
+// ============================================
 async function getAboutGithub() {
   try {
 
+    // Não esqueça de trocar conteudoGeneration pelo seu usuário do GitHub
     const resposta = await fetch('https://api.github.com/users/bruna-dsmendes');
     const perfil = await resposta.json();
 
@@ -21,20 +33,20 @@ async function getAboutGithub() {
 
             <article class="about-content">
                 <h2>Sobre mim</h2>
-                <p>Olá! Sou Bruna, Desenvolvedora Java FullStack.</p>
+                <p> Olá! Sou Bruna, Desenvolvedora Java FullStack. </p>
                 
-                <p>Sempre acreditei que as melhores soluções de software nascem da junção entre uma arquitetura sólida
+                <p> Sempre acreditei que as melhores soluções de software nascem da junção entre uma arquitetura sólida
 					de backend e uma experiência fluida e intuitiva de frontend. Movida pela curiosidade, busco
 					constantemente novas perspectivas para solucionar problemas complexos. Essa vontade de explorar o
 					incomum e testar novas tecnologias é o que me permite conquistar ótimos resultados e entregar
 					sistemas eficientes que realmente se destacam. Se você procura alguém que une um olhar atento aos
 					detalhes com foco em inovação e engenharia de software, está no lugar certo. Vamos criar algo
-					incrível juntos?</p>
+					incrível juntos? </p>
 
                 <div class="about-buttons-data">
                     <div class="buttons-container">
                         <a href="${perfil.html_url}" target="_blank" class="botao">Ver GitHub</a>
-                        <a href="https://drive.google.com/file/d/1FtRm2YPmsp3WoCO77BZvBvbbIpCPZje8/view?usp=drive_link" target="_blank" class="botao-outline">Currículo</a>
+                        <a href="#" target="_blank" class="botao-outline">Currículo</a>
                     </div>
                     
                     <div class="data-container">
@@ -54,16 +66,24 @@ async function getAboutGithub() {
     console.error('Erro ao buscar dados do usuário:', error);
   }
 }
+
+// Executar a função ao carregar o script
 getAboutGithub();
+
+// ============================================
+// BUSCAR REPOSITÓRIOS DO GITHUB
+// ============================================
 
 async function getProjectsGithub() {
   try {
 
+    // Não esqueça de trocar conteudoGeneration pelo seu usuário do GitHub
     const resposta = await fetch('https://api.github.com/users/bruna-dsmendes/repos?sort=updated&per_page=6');
     const repositorios = await resposta.json();
 
     swiperWrapper.innerHTML = '';
 
+    // Objeto contendo a lista de logos das linguagens
     const linguagens = {
       'JavaScript': 'javascript',
       'TypeScript': 'typescript',
@@ -83,33 +103,42 @@ async function getProjectsGithub() {
 
     repositorios.forEach(repositorio => {
 
+      // Seleciona o nome da Linguagem padrão do repositório
       const linguagem = repositorio.language || 'GitHub'
 
+      // Seleciona o logo da Linguagem padrão do repositório
       const logo = linguagens[linguagem] ?? linguagens['GitHub']
 
+      // Constrói a URL que aponta para o logo da Linguagem padrão do repositório
       const urlLogo = `./assets/icons/languages/${logo}.svg`
 
+      // Formata o nome do reposiório
       const nomeFormatado = repositorio.name
         .replace(/[-_]/g, ' ')
         .replace(/[^a-zA-Z0-9\s]/g, '')
         .toUpperCase();
 
+      // Função para truncar texto da descrição
       const truncar = (texto, limite) => texto.length > limite
         ? texto.substring(0, limite) + '...'
         : texto
 
+      // Define a descrição do Repositório
       const descricao = repositorio.description
         ? truncar(repositorio.description, 100)
         : 'Projeto desenvolvido no GitHub'
 
+      // tags
       const tags = repositorio.topics?.length > 0
         ? repositorio.topics.slice(0, 3).map(topic => `<span class="tag">${topic}</span>`).join('')
         : `<span class="tag">${linguagem}</span>`;
 
+      // Cria o Botão Deploy
       const botaoDeploy = repositorio.homepage
         ? `<a href="${repositorio.homepage}" target="_blank" class="botao-outline botao-sm">Deploy</a>`
         : ''
 
+      // Botões de ação
       const botoesAcao = `
                 <div class="project-buttons">
                     <a href="${repositorio.html_url}" target="_blank" class="botao botao-sm">
