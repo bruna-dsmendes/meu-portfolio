@@ -78,7 +78,7 @@ async function getProjectsGithub() {
   try {
 
     // Não esqueça de trocar conteudoGeneration pelo seu usuário do GitHub
-    const resposta = await fetch('https://api.github.com/users/bruna-dsmendes/repos?sort=updated&per_page=6');
+    const resposta = await fetch('https://api.github.com/users/bruna-dsmendes/repos?sort=name&per_page=100');
     const repositorios = await resposta.json();
 
     swiperWrapper.innerHTML = '';
