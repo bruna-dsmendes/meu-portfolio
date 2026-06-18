@@ -1,26 +1,14 @@
-// ============================================
-// SELEÇÃO DE ELEMENTOS DA PÁGINA
-// ============================================
-
-// Seletor da Seção About (section)
 const about = document.querySelector('#about');
 
-// Seletor da Seção Projects (Carrossel)
 const swiperWrapper = document.querySelector('.swiper-wrapper');
 
-// Seletor do Formulário
 const formulario = document.querySelector('#formulario');
 
-// Regex de validação do e-mail
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-// ============================================
-// BUSCAR DADOS DO PERFIL DO GITHUB
-// ============================================
 async function getAboutGithub() {
   try {
 
-    // Não esqueça de trocar conteudoGeneration pelo seu usuário do GitHub
     const resposta = await fetch('https://api.github.com/users/bruna-dsmendes');
     const perfil = await resposta.json();
 
@@ -66,24 +54,17 @@ async function getAboutGithub() {
     console.error('Erro ao buscar dados do usuário:', error);
   }
 }
-
-// Executar a função ao carregar o script
 getAboutGithub();
-
-// ============================================
-// BUSCAR REPOSITÓRIOS DO GITHUB
-// ============================================
 
 async function getProjectsGithub() {
   try {
 
-    // Não esqueça de trocar conteudoGeneration pelo seu usuário do GitHub
-    const resposta = await fetch('https://api.github.com/users/bruna-dsmendes/repos?sort=name&per_page=100');
+    const resposta = await fetch('https://api.github.com/users/bruna-dsmendes/starred');
+
     const repositorios = await resposta.json();
 
     swiperWrapper.innerHTML = '';
 
-    // Objeto contendo a lista de logos das linguagens
     const linguagens = {
       'JavaScript': 'javascript',
       'TypeScript': 'typescript',
