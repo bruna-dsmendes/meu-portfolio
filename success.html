@@ -2,71 +2,58 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Fontes do Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bruna Mendes">
+    <meta name="description" content="Mensagem enviada com sucesso!">
+    <meta name="robots" content="noindex, nofollow">
 
-  <!-- Fonte do Google - Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="assets/CSS/style.css">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Bruna Mendes">
-  <meta name="description" content="Portfólio da Bruna Mendes, 
-                Desenvolvedora Full Stack especializada em criar experiências 
-                digitais incríveis. Conheça meus projetos e entre em contato.">
-  <meta name="robots" content="index, follow">
-
-  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
-
-  <!-- Link para a Folha de Estilo da Página - CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <title>Portfólio Bru</title>
+    <title>Mensagem Enviada — Portfólio da Bru</title>
 </head>
-
 
 <body>
 
-  <header class="menu-container">
-    <div class="menu-content">
-      <a href="index.html" id="titulo">Portfólio da Bru</a>
+    <canvas id="bubble-canvas"></canvas>
 
-      <nav>
-        <ul class="menu-list">
-          <li><a href="index.html#hero">Início</a></li>
-          <li><a href="index.html#about">Sobre</a></li>
-          <li><a href="index.html#projects">Projetos</a></li>
-          <li><a href="index.html#contact">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <div class="menu-content">
+            <a href="index.html" id="titulo">✦ Portfólio da Bru</a>
+            <nav>
+                <ul class="menu-list">
+                    <li><a href="index.html#hero">Início</a></li>
+                    <li><a href="index.html#about">Sobre</a></li>
+                    <li><a href="index.html#projects">Projetos</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <main>
+    <main>
+        <section class="success-container">
+            <div class="success-content">
+                <div class="success-icon">
+                    <img src="assets/img/success.svg" alt="Ícone de sucesso" class="float-animation">
+                </div>
+                <h1>Mensagem Enviada!</h1>
+                <h2>Obrigada pelo contato. Responderei em breve 💜</h2>
+                <a href="index.html" class="botao">Voltar ao Início</a>
+            </div>
+        </section>
+    </main>
 
-    <section class="success-container">
-      <article class="success-content">
+    <footer>
+        Desenvolvido com 💜 por <span>Bruna Mendes</span> — 2026
+    </footer>
 
-        <figure class="success-icon">
-          <img src="./assets/img/success.svg" alt="Ilustração de sucesso" class="float-animation" width="20%">
-        </figure>
-
-        <h1>E-mail enviado com Sucesso!</h1>
-        <h2>Obrigado por entrar em contato! <br> Logo mais retornarei sua mensagem.</h2>
-
-        <a class="botao" href="index.html">Voltar para o Início</a>
-
-      </article>
-    </section>
-
-  </main>
-
-  <footer>
-    Desenvolvido por Bruna Mendes - 2026
-  </footer>
+    <script src="assets/js/bubbles.js"></script>
 
 </body>
-
 </html>
